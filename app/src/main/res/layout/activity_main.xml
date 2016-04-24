@@ -15,22 +15,16 @@
         android:text="Hello World!"
         android:id="@+id/stauts_tevi_01" />
 
-    <Chronometer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/chrono_01"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/injwaiting_img_01"
-        android:layout_below="@+id/chrono_01"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:src="@mipmap/baseautoinjector_01"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/waiting_inj" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -39,6 +33,16 @@
         android:src="@mipmap/injectingautoinjector_01"
         android:visibility="invisible"
         android:layout_alignBottom="@+id/injwaiting_img_01"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/injecting" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Waiting ..."
+        android:id="@+id/pressuretime_txt_01"
+        android:layout_above="@+id/injworking_img_01"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
