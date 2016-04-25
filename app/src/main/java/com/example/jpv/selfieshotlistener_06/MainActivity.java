@@ -31,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         //Initializing local variables
         starttimems = 0;
         stoptimems = 0;
+
+        //Initializing views
+        injwaiting_img_01.setVisibility(ImageView.VISIBLE);
+        pressuretime_txt_01.setText("Pressure time: 0.0 s");
+
     }
 
     @Override
@@ -49,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
                 stauts_tevi_01.setText("Return pressed");
                 return true;*/
 
-            case KeyEvent.KEYCODE_VOLUME_UP:
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
                 //Time measuring
-                pressuretime_txt_01.setText("Waiting...");
+                pressuretime_txt_01.setText("Pressure time: 0.0 s");
                 //chrono_01.start();
 
                 //Status string update
@@ -59,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
 
-            case KeyEvent.KEYCODE_VOLUME_DOWN:
+            case KeyEvent.KEYCODE_VOLUME_UP:
                 //Staus string update
                 stauts_tevi_01.setText("Volumen Down pressed");
 
@@ -90,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 stauts_tevi_01.setText("Return released");
                 return true;*/
 
-            case KeyEvent.KEYCODE_VOLUME_UP:
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
                 //Staus string update
                 stauts_tevi_01.setText("Volumen Up released");
 
@@ -99,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
 
-            case KeyEvent.KEYCODE_VOLUME_DOWN:
+            case KeyEvent.KEYCODE_VOLUME_UP:
                 //Time measuring
                 stoptimems = System.currentTimeMillis();
                 pressuretime_txt_01.setText("Pressure time: " + (double) (stoptimems-starttimems)/1000 + " s");
