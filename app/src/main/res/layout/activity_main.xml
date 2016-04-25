@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Hello World!"
         android:id="@+id/stauts_tevi_01"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     <ImageView
         android:layout_width="wrap_content"

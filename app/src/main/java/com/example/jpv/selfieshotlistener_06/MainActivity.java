@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<Float> timesadapter;//JPV: adapter for the ListView of the injection times
     DecimalFormat twoDForm = new DecimalFormat("#.##");//JPV: rounding scheme
     FileOutputStream outputStream;  //JPV: to save the list of times measured
-    String filename = "MeausredTimes.bxp";
+    String filename = "MeausredTimes";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,14 +58,6 @@ public class MainActivity extends AppCompatActivity {
         times_livi_01 = (ListView) findViewById(R.id.times_livi_01);
         timesadapter = new ArrayAdapter<Float>(this,android.R.layout.simple_list_item_1,timesarray);
         times_livi_01.setAdapter(timesadapter);
-
-        //Output file
-        try {
-            outputStream = openFileOutput(filename, Context.MODE_APPEND);
-        } catch (Exception e) {
-            e.printStackTrace();
-            stauts_tevi_01.setText("Couldn't open file");
-        }
     }
 
     @Override
@@ -161,9 +153,11 @@ public class MainActivity extends AppCompatActivity {
 
                 //Output file
                 byte[] timeinbytes = float2ByteArray(pretime);
+                //Output file
                 try {
+                    outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
                     outputStream.write(timeinbytes);
-                    //outputStream.close();
+                    outputStream.close();
                 } catch (Exception e) {
                     e.printStackTrace();
                     stauts_tevi_01.setText("Couldn't save data");
