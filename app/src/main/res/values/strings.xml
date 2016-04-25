@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Remote Patch Injector</string>
+    <string name="app_name">Injection Time Tester</string>
     <string name="waiting_inj">Waiting to start injection</string>
     <string name="injecting">Injecting</string>
 

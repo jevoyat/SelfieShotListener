@@ -8,13 +8,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.jpv.selfieshotlistener_06.MainActivity"
-    android:background="@mipmap/extv_go_pgm_02">
+    android:background="@mipmap/foot_bck_new_01">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:id="@+id/stauts_tevi_01" />
+        android:id="@+id/stauts_tevi_01"
+        android:visibility="invisible" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -22,7 +23,7 @@
         android:id="@+id/injwaiting_img_01"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:src="@mipmap/baseautoinjector_01"
+        android:src="@mipmap/injector_green_02"
         android:visibility="invisible"
         android:layout_centerVertical="true"
         android:contentDescription="@string/waiting_inj" />
@@ -31,7 +32,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/injworking_img_01"
-        android:src="@mipmap/injectingautoinjector_01"
+        android:src="@mipmap/injector_red_02"
+        android:visibility="invisible"
+        android:layout_alignBottom="@+id/injwaiting_img_01"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/injecting" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/injdone_img_01"
+        android:src="@mipmap/injector_orange_02"
+        android:visibility="invisible"
+        android:layout_alignBottom="@+id/injwaiting_img_01"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/injecting" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@mipmap/injector_red_02"
         android:visibility="invisible"
         android:layout_alignBottom="@+id/injwaiting_img_01"
         android:layout_centerHorizontal="true"
@@ -43,7 +64,17 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Waiting ..."
         android:id="@+id/pressuretime_txt_01"
-        android:layout_above="@+id/injworking_img_01"
+        android:layout_below="@+id/injwaiting_img_01"
         android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/times_livi_01"
+        android:transcriptMode="alwaysScroll"
+        android:stackFromBottom="true"
+        android:layout_below="@+id/pressuretime_txt_01"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/pressuretime_txt_01" />
 
 </RelativeLayout>
